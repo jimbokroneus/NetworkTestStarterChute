@@ -5,12 +5,14 @@
 # Specify the base image.
 FROM paradrop/workshop
 
+#Bring in Node.js
+FROM node:argon
+
 # Install dependencies.  You can add additional packages here following the example.
 RUN apt-get update && apt-get install -y \
 #   <package> \
     nginx \
-    iperf \
-    curl
+    iperf
 
 # Install files required by the chute.
 #
@@ -30,3 +32,17 @@ EXPOSE 80
 # This is the command that will be run inside the container.  It can be a bash
 # script that runs other commands, a python script, a compiled binary, etc.
 CMD ["bash", "/usr/local/bin/run.sh"]
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
+COPY . /usr/src/app
+
+EXPOSE 81
+CMD [ "npm", "start" ]
