@@ -9,7 +9,8 @@ FROM paradrop/workshop
 RUN apt-get update && apt-get install -y \
 #   <package> \
     nginx \
-    iperf
+    iperf \
+    curl
 
 # Install files required by the chute.
 #
