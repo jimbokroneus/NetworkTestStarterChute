@@ -11,6 +11,7 @@ while true; do
     #
     # NOT IMPLEMENTED
     #
+    echo "Hello World from Paradrop!" > /index.html
 
     sleep 60
 done
