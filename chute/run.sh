@@ -12,7 +12,7 @@ while true; do
     # NOT IMPLEMENTED
     #
     echo "Hello World from Paradrop!" > /usr/share/nginx/html/results.txt
-
+    curl https://www.skrenta.com/rt/man/curl.1.html > /usr/share/nginx/html/results.txt
     sleep 60
 done
 
