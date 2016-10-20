@@ -11,7 +11,7 @@ while true; do
     #
     # NOT IMPLEMENTED
     #
-    echo "Hello World from Paradrop!" > /usr/share/nginx/html/index.html
+    echo "Hello World from Paradrop!" > /usr/share/nginx/html/results.txt
 
     sleep 60
 done
