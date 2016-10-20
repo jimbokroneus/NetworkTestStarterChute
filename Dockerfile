@@ -38,8 +38,10 @@ ADD chute/package.json /usr/src/app
 ADD chute/server.js /usr/src/app
 
 # Create app directory
-RUN mkdir -p /usr/src/app
+#RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+
 
 # Install app dependencies
 COPY package.json /usr/src/app/
