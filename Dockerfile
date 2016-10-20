@@ -33,6 +33,10 @@ EXPOSE 80
 # script that runs other commands, a python script, a compiled binary, etc.
 CMD ["bash", "/usr/local/bin/run.sh"]
 
+
+ADD chute/package.json /usr/src/app
+ADD chute/server.js /usr/src/app
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
