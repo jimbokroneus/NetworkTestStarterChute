@@ -42,7 +42,7 @@ ADD chute/server.js /usr/src/nodeApp
 WORKDIR /usr/src/nodeApp
 
 # Install app dependencies
-COPY package.json /usr/src/nodeApp/
+#COPY chute/package.json /usr/src/nodeApp/
 RUN npm install
 
 # Bundle app source
