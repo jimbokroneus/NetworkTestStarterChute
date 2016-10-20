@@ -33,20 +33,20 @@ EXPOSE 80
 # script that runs other commands, a python script, a compiled binary, etc.
 CMD ["bash", "/usr/local/bin/run.sh"]
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/nodeApp
 
-ADD chute/package.json /usr/src/app
-ADD chute/server.js /usr/src/app
+ADD chute/package.json /usr/src/nodeApp
+ADD chute/server.js /usr/src/nodeApp
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/nodeApp
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json /usr/src/nodeApp/
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . /usr/src/nodeApp
 
 EXPOSE 81
 CMD [ "npm", "start" ]
